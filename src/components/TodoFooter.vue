@@ -1,23 +1,21 @@
 <template>
-	<div>
-		<!-- 아래 버튼을 클릭하면 브라우저 저장소의 데이터를 다 
-    삭제하는 코드를 구현해봐라 -->
-		<h1>Todo Footer</h1>
-		<button v-on:click="clearData()">clear all</button>
-	</div>
+  <div>
+    <h1>Footer</h1>
+    <button v-on:click="clearItems">clear all</button>
+  </div>
 </template>
 
 <script>
-// import { bus } from '../utils/eventBus';
+// import { bus } from '../utils/bus';
 
 export default {
-	methods: {
-		clearData: function() {
-			localStorage.clear();
-			this.$emit('clear');
-			// bus.$emit('remove-all');
-		},
-	},
+  methods: {
+    clearItems: function() {
+      localStorage.clear();
+      this.$emit('clear');
+      // bus.$emit('remove-all');
+    }
+  }
 };
 </script>
 

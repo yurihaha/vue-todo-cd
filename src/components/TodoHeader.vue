@@ -1,31 +1,37 @@
 <template>
-	<h1>Todo Header</h1>
+  <h1>할 일 관리 앱을 배포해보자</h1>
 </template>
 
 <script>
 export default {
-	// <h1>Todo Header</h1> 와 같음 아래
-	// render: function(creatElement) {
-	//     return creatElement('h1', 'todoApp');
-	// }
+  props: ['num'],
+  // render: function(createElement) {
+  //   return createElement('h1', 'Todo App');
+  // }
+  created() {
+    this.num = this.num + 1;
+    // var h1 = document.querySelector('h1');
+    // console.log('created', h1);
+  },
+  beforeMount () {
+    // var h1 = document.querySelector('h1');
+    // console.log('before mount', h1);
+  },
+  mounted () {
+    // var h1 = document.querySelector('h1');
+    // console.log('mounted', h1);
+  },
+}
 
-	created() {
-		var h1 = document.querySelector('h1');
-		console.log('TodoHeader.vue 에서 created 출력', h1);
-	},
-	beforeMount() {
-		var h1 = document.querySelector('h1');
-		console.log('TodoHeader.vue 에서 before Mount 출력', h1);
-	},
-	mounted() {
-		var h1 = document.querySelector('h1');
-		console.log('TodoHeader.vue 에서 mounted 출력', h1);
-	},
-};
+// document.querySelector('#btn');
+// $('#btn').click(function() {
+//   console.log('hi');
+// })
+
 </script>
 
 <style scoped>
 h1 {
-	color: blue;
+  color: blue;
 }
 </style>
