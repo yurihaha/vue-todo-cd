@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .blue {
+        color: blue;
+      }
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>데이터 바인딩</h1>
+      <p>{{ msg + ' Vue !!'.split('').join() }}</p>
+      <p>{{ greeingMessage }}</p>
+      <!-- <p>{{ productList }}</p> -->
+      <h1>디렉티브</h1>
+      <p id="100">v-bind</p>
+      <p v-bind:id="num">v-bind</p>
+      <!-- <app-header v-bind:프롭스 속성이름="상위 컴포넌트 데이터"></app-header>
+      <app-contents
+        v-on:하위
+        컴포넌트의
+        이벤트
+        이름="상위 컴포넌트 데이터"
+      ></app-contents> -->
+      <button v-on:click="greet">say hi!</button>
+      <!-- <input type="text" /> -->
+      <hr />
+      <h1>디렉티브 실습</h1>
+      <button @click="toggleTextClass">색깔바꾸기</button>
+      <p v-bind:class="textClass">이 색깔이 바뀝니다.</p>
+      <p v-if="login">로그인이 되었습니다.</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      //   var instanceOptions = {
+      //     el: '#app',
+
+      //   };
+      new Vue({
+        el: '#app',
+        methods: {
+          greet: function() {
+            console.log('hi');
+          },
+          toggleTextClass: function() {
+            // blue;
+            // red;
+            this.textClass = 'red';
+          }
+        },
+        data: {
+          msg: 'hello',
+          textClass: 'blue',
+          num: 100,
+          login: false
+        },
+        computed: {
+          greeingMessage: function() {
+            return this.msg + ' Vue!';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
